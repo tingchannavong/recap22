@@ -3,7 +3,7 @@ import NavBar from "../components/NavBar"
 
 function MainLayout() {
   return (
-    <div>
+    <div className="min-h-screen">
       <NavBar />
       <Outlet />
     </div>
