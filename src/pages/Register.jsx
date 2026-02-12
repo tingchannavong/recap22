@@ -73,6 +73,7 @@ function Register() {
             type="text"
             className={inputStyles}
             name="username"
+            value={formData.username}
             onChange={hdlChange}
           />
           {errors.username && <p className="text-red-500">{errors.username}</p>}
