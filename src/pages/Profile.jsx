@@ -1,13 +1,23 @@
+import useUserStore from "../stores/userStorage";
+
 function Profile() {
-  const user = {
-    email: "emily.johnson@x.dummyjson.com",
-    firstName: "Emily",
-    gender: "female",
-    id: 1,
-    image: "https://dummyjson.com/icon/emilys/128",
-    lastName: "Johnson",
-    username: "emilys",
-  };
+    const user = useUserStore( (state) => state.user);
+    console.log(user);
+
+    if (!user) {
+        return <p className="text-2xl text-red-500 text-center">No User Data Found...</p>
+    }
+
+//   const user = {
+//     email: "emily.johnson@x.dummyjson.com",
+//     firstName: "Emily",
+//     gender: "female",
+//     id: 1,
+//     image: "https://dummyjson.com/icon/emilys/128",
+//     lastName: "Johnson",
+//     username: "emilys",
+//   };
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white w-full max-w-md rounded-2xl shadow-xl p-8 text-center">

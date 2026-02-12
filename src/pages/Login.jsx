@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios';
+import useUserStore from '../stores/userStorage';
+import { useNavigate } from 'react-router';
 
 function Login() {
     const [formLogin, setFormLogin] = useState({
@@ -7,15 +9,25 @@ function Login() {
         password: ""
     });
 
-    const hdlChange = (e) => {
-        const { name, value } = e.target;
-        setFormLogin( prev => ({...prev, [name] : value}));
-    }
+    const navigate = useNavigate();
+
+    const setUser = useUserStore((state) => state.setUser);
+    const setToken = useUserStore((state) => state.setToken);
+    // console.log(useUserStore); this is a selector with useUserStore (api, selector)
 
     const hdlSubmit = async (e) => {
         e.preventDefault();
         const res = await axios.post('https://dummyjson.com/auth/login', formLogin);
         console.log(res.data);
+        const {image, firstName, lastName, username, email, accessToken } = res.data;
+        setUser( {image, firstName, lastName, username, email});
+        setToken( {accessToken} );
+        navigate('/profile');
+    }
+
+    const hdlChange = (e) => {
+        const { name, value } = e.target;
+        setFormLogin( prev => ({...prev, [name] : value}));
     }
 
   const inputStyles = "border bg-blue-50 w-full p-5";
