@@ -6,6 +6,7 @@ import Posts from "../pages/Posts";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Profile from "../pages/Profile";
+import TokenProfile from "../pages/TokenProfile";
 
 const routes = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const routes = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile />
+            },
+            {
+                path: '/token-profile',
+                element: <TokenProfile />
             },
         ],
     },

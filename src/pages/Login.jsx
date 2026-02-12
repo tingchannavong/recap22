@@ -21,7 +21,7 @@ function Login() {
         console.log(res.data);
         const {image, firstName, lastName, username, email, accessToken } = res.data;
         setUser( {image, firstName, lastName, username, email});
-        setToken( {accessToken} );
+        setToken( accessToken );
         navigate('/profile');
     }
 

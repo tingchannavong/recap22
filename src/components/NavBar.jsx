@@ -9,6 +9,7 @@ function NavBar() {
         <NavLink to="/post" className={navStyles}>Posts</NavLink>
         <NavLink to="/login" className={navStyles}>Log In</NavLink>
         <NavLink to="/profile" className={navStyles}>Profile</NavLink>
+        <NavLink to="/token-profile" className={navStyles}>Token Profile</NavLink>
     </div>
   )
 }
