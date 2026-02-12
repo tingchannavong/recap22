@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import Posts from "../pages/Posts";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
+import Profile from "../pages/Profile";
 
 const routes = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login />
+            },
+            {
+                path: '/profile',
+                element: <Profile />
             },
         ],
     },

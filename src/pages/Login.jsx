@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import axios from 'axios';
 
 function Login() {
@@ -27,7 +27,7 @@ function Login() {
       >
         <h1 className="text-center font-bold italic text-xl">
           {" "}
-          Create Account
+          Log In
         </h1>
         <label htmlFor="">
           Username:
